@@ -6,6 +6,7 @@ const cors = require('cors'); // Import CORS middleware
 const cookieParser = require('cookie-parser'); // Import cookie-parser middleware
 const connectToDb = require('./db/db')      
 const userRoutes = require('./routes/user.routes'); // Import user routes
+const captainRoutes = require('./routes/captain.routes'); // Import captain routes
 
 connectToDb();
 
@@ -19,5 +20,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', userRoutes); // Use user routes for any requests to /users
+app.use('/captains', captainRoutes); // Use captain routes for any requests to /captains
 
 module.exports = app;
